@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carshop.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather&display=swap">
+
+    <title>Mercedes Car Shop</title>
+</head>
+
+<body>
+    
+     
+     <div class="header">
+        <h1>YLBERI'S MERCEDES SHOP</h1>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Cars</a>
+        <div class="dropdown">
+            <a href="#">About</a>
+            <div class="dropdown-content">
+                <a href="#">History</a>
+                <a href="#">Team</a>
+                <a href="#">Mission</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Models</a>
+            <div class="dropdown-content">
+                <a href="#">C-Class</a>
+                <a href="#">E-Class</a>
+                <a href="#">S-Class</a>
+                <a href="#">GLC</a>
+                <a href="#">GLE</a>
+                <a href="#">GT</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Services</a>
+            <div class="dropdown-content">
+                <a href="#">Maintenance</a>
+                <a href="#">Repairs</a>
+                <a href="#">Customization</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Mercedes License</a>
+            <div class="dropdown-content">
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">License Agreement</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="cookie-consent-banner">
+        <p>This website uses cookies to ensure you get the best experience.
+             All right reserved by Ylber Uksmajli ©  <button onclick="acceptCookies()">Accept All</button></p>
+    </div>
+
+   
+    <div class="filter-container">
+        <label for="filter-name">Filter by Make/Model:</label>
+        <input type="text" id="filter-name">
+
+        <label for="filter-min-price">Min Price:</label>
+        <input type="number" id="filter-min-price" step="0.01">
+
+        <label for="filter-max-price">Max Price:</label>
+        <input type="number" id="filter-max-price" step="0.01">
+
+        <button onclick="applyFilters()">Filter</button>
+        <button onclick="resetFilters()">Reset Filters</button>
+    </div>
+
+    
+<div id="default-items">
+    <div class="item" data-item-id="1" data-make="Mercedes" data-model="C-Class" data-price="50000"
+        data-image="https://example.com/c-class.jpg">
+        <h3>Mercedes C-Class</h3>
+        <img src="img/cclass.jpeg" alt="Mercedes C-Class">
+        <p>Price: $50,000</p>
+        <button onclick="addToCart(1)">Add to Cart</button>
+    </div>
+
+    <div class="item" data-item-id="2" data-make="Mercedes" data-model="E-Class" data-price="60000"
+        data-image="https://example.com/e-class.jpg">
+        <h3>Mercedes E-Class</h3>
+        <img src="img/eclass.jpeg" alt="Mercedes E-Class">
+        <p>Price: $60,000</p>
+        <button onclick="addToCart(2)">Add to Cart</button>
+    </div>
+
+    <div class="item" data-item-id="3" data-make="Mercedes" data-model="S-Class" data-price="80000"
+        data-image="https://example.com/s-class.jpg">
+        <h3>Mercedes S-Class</h3>
+        <img src="img/sclass.jpeg" alt="Mercedes S-Class">
+        <p>Price: $80,000</p>
+        <button onclick="addToCart(3)">Add to Cart</button>
+    </div>
+
+    <div class="item" data-item-id="4" data-make="Mercedes" data-model="GLC" data-price="45000"
+        data-image="https://example.com/glc.jpg">
+        <h3>Mercedes GLC</h3>
+        <img src="img/glc.jpeg" alt="Mercedes GLC">
+        <p>Price: $45,000</p>
+        <button onclick="addToCart(4)">Add to Cart</button>
+    </div>
+
+    <div class="item" data-item-id="5" data-make="Mercedes" data-model="GLE" data-price="70000"
+        data-image="img/gle.jpg">
+        <h3>Mercedes GLE</h3>
+        <img src="img/gle.jpeg" alt="Mercedes GLE">
+        <p>Price: $70,000</p>
+        <button onclick="addToCart(5)">Add to Cart</button>
+    </div>
+
+    <div class="item" data-item-id="6" data-make="Mercedes" data-model="GT" data-price="90000"
+        data-image="img/gt.jpeg">
+        <h3>Mercedes GT</h3>
+        <img src="img/gle.jpeg" alt="Mercedes GT">
+        <p>Price: $90,000</p>
+        <button onclick="addToCart(6)">Add to Cart</button>
+    </div>
+</div>
+
+
+    
+    <div id="shopping-cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    
+    <div class = "add-car">
+        <label for="add-make">Make:</label>
+        <input type="text" id="add-make">
+
+        <label for="add-model">Model:</label>
+        <input type="text" id="add-model">
+
+        <label for="add-price">Price:</label>
+        <input type="number" id="add-price" step="0.01">
+
+        <label for="add-image">Image URL:</label>
+        <input type="text" id="add-image">
+
+        <button onclick="addCustomCar()">Add Car</button>
+    </div>
+
+    
+
+
+  <script src="carshop.js"></script>
+ <script src="coockies.js"></script>
+ 
+
+</body>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: info@ylber-mercedes-shop.com</p>
+            <p>Phone: +383 123 456 789</p>
+        </div>
+        <div class="footer-section">
+            <h3>Visit Us</h3>
+            <p>Kosove</p>
+            <p>Kosove, Ferizaj, 70000</p>
+        </div>
+        <div class="footer-section">
+            <h3>Connect With Us</h3>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+        <div class="footer-section">
+            <h3>Explore</h3>
+            <a href="#">Models</a>
+            <a href="#">Services</a>
+            <a href="#">Financing</a>
+            <a href="#">Testimonials</a>
+        </div>
+        <div class="footer-section">
+            <h3>About Mercedes</h3>
+            
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Ylberi's Mercedes Car Shop. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+</html>
