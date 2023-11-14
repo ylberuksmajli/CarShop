@@ -1,7 +1,4 @@
 {
-    "name": "ylberi's car-shop",
-    "scripts": {
-      "build": "babel src -d lib",
-      "test": "jest"
-    }
+    "name": "my-package"
+    
   }
